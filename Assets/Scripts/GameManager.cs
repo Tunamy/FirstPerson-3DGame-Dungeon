@@ -7,7 +7,7 @@ public class GameManager : MonoBehaviour
     public static GameManager instance { get; private set; }
 
     public int vidas;
-    public int gunAmmo;
+    public int gunAmmo = 100;
 
     public GameObject panelPause;
     bool isPaused = false;
