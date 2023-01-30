@@ -5,6 +5,8 @@ TagManager:
   serializedVersion: 2
   tags:
   - Caja
+  - Espada
+  - DmgAsset
   layers:
   - Default
   - TransparentFX

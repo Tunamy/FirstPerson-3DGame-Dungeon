@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UIElements;
 
 public class Player : MonoBehaviour
 {
@@ -17,6 +18,13 @@ public class Player : MonoBehaviour
     public float sphereRadius = 0.3f;
     public LayerMask groundLayer;
     public bool isGrounded;
+
+    public GameObject granadaPrefab;
+    public float fuerzaGranada = 550f;
+    public Transform granadaSpawn;
+    public int fuerzabombeo = 50;
+
+    
 
 
     // Start is called before the first frame update
@@ -54,6 +62,33 @@ public class Player : MonoBehaviour
             velocity.y = Mathf.Sqrt(jumpForce * -2 * gravity * Time.deltaTime);
         }
 
-        
+        if (Input.GetKeyDown(KeyCode.E) && GameManager.instance.granadas > 0)
+        {
+            LanzarGranada();
+        }
+
     }
+
+    private void LanzarGranada()
+    {
+        
+
+        Ray ray = Camera.main.ScreenPointToRay(new Vector3(Screen.width / 2, Screen.height / 2));
+        RaycastHit hit;
+        if (Physics.Raycast(ray, out hit))
+        {
+            
+            Vector3 direction = hit.point - granadaSpawn.position; //me da el vector de el spawn point hasta el centro de la camara
+            direction.Normalize();
+
+            GameObject nuevaGranada = Instantiate(granadaPrefab, granadaSpawn.position, granadaSpawn.rotation);
+            nuevaGranada.GetComponent<Rigidbody>().AddForce(direction * fuerzaGranada + new Vector3(0, fuerzabombeo, 0));
+
+            GameManager.instance.granadas--;
+            
+        }
+    }
+
+   
+
 }

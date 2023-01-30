@@ -14,9 +14,12 @@ public class Shoot : MonoBehaviour
 
     public Animator bastonAnim;
 
-    //public TextMeshProUGUI textAmmo;
+    public TextMeshProUGUI textAmmo;
 
-
+    private void Start()
+    {
+        textAmmo.text = GameManager.instance.gunAmmo.ToString();
+    }
     // Update is called once per frame
     void Update()
     {
@@ -26,9 +29,9 @@ public class Shoot : MonoBehaviour
             if (Time.time > shotRateTime && GameManager.instance.gunAmmo > 0) 
             {
 
-                GameManager.instance.gunAmmo--; //resta una bala
+                 //resta una bala
 
-                //textAmmo.text = GameManager.instance.gunAmmo.ToString();
+                
 
                 Ray ray = Camera.main.ScreenPointToRay(new Vector3(Screen.width / 2, Screen.height / 2));
                 RaycastHit hit;
@@ -45,6 +48,10 @@ public class Shoot : MonoBehaviour
 
                     shotRateTime = Time.time + shotRate;
                     Destroy(newBullet, 3);
+
+                    GameManager.instance.gunAmmo--;
+
+                    textAmmo.text = GameManager.instance.gunAmmo.ToString();
                 }
             }
         }
