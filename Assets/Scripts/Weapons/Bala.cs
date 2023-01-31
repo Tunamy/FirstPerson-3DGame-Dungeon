@@ -26,5 +26,11 @@ public class Bala : MonoBehaviour
             collision.gameObject.GetComponent<DestroyAsset>().QuitarVidas(dañoPorbala);
             
         }
+
+        if (collision.gameObject.CompareTag("Puerta")) 
+        {
+
+            collision.gameObject.GetComponent<DestroyAsset>().QuitarVidas(dañoPorbala);
+        }
     }
 }

@@ -51,6 +51,13 @@ public class Espada : MonoBehaviour
             collision.gameObject.GetComponent<DestroyAsset>().QuitarVidas(dañoPorGolpe);
 
         }
+
+        // poner romper puerta
+        if (collision.gameObject.CompareTag("Puerta"))
+        {
+
+            collision.gameObject.GetComponent<DestroyAsset>().QuitarVidas(dañoPorGolpe);
+        }
     }
 
    

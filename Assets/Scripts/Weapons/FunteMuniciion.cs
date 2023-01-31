@@ -6,6 +6,7 @@ using UnityEngine;
 public class FunteMuniciion : MonoBehaviour
 {
     public int municion = 7;
+    public int RegenerarVida = 10;
     public int tiempoRegeneracion = 10;
     public GameObject particulas;
 
@@ -29,6 +30,8 @@ public class FunteMuniciion : MonoBehaviour
 
             GameManager.instance.granadas++;
             GameManager.instance.gunAmmo += municion;
+            GameManager.instance.vida += RegenerarVida;
+
             StartCoroutine("ResetFuente");
         }
     }

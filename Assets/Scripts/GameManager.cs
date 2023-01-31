@@ -12,7 +12,10 @@ public class GameManager : MonoBehaviour
 {
     public static GameManager instance { get; private set; }
 
-    public int vidas;
+    public float vida;
+    public float vidaMax = 100;
+    public Image Barradevida;
+
     public int gunAmmo = 30;
     private int gunammoAnterio;
     public int granadas = 3;
@@ -35,6 +38,9 @@ public class GameManager : MonoBehaviour
     void Start()
     {
         panelPause.SetActive(false);
+
+        vida = vidaMax;
+        Barradevida.fillAmount = vida;
     }
 
     // Update is called once per frame
@@ -61,6 +67,10 @@ public class GameManager : MonoBehaviour
             gunammoAnterio = gunAmmo;
             textAmmo.text = GameManager.instance.gunAmmo.ToString();
         }
+
+        Barradevida.fillAmount = vida / vidaMax;
+
+
         CambioArmaUI();
         BombasUI();
 
@@ -115,6 +125,21 @@ public class GameManager : MonoBehaviour
         {
             espadainfo.SetActive(false);
         }
+    }
+
+    public void PerderVida(int daño)
+    {
+
+        vida -= daño;
+        Barradevida.fillAmount = vida / vidaMax;
+
+        Debug.Log(vida / vidaMax);
+
+        if(vida <= 0)
+        {
+            //reiniciar nivel
+        }
+
     }
 
     private void PauseGame()
