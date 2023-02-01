@@ -22,7 +22,7 @@ public class MovimientoCamara : MonoBehaviour
         float mouseX = Input.GetAxis("Mouse X") * ratonSensivilidad * Time.deltaTime;
         float mouseY = Input.GetAxis("Mouse Y") * ratonSensivilidad * Time.deltaTime;
         xRotation -= mouseY;
-        xRotation = Mathf.Clamp(xRotation, -50f, 90f); //bloquea camara en esos rangos;
+        xRotation = Mathf.Clamp(xRotation, -90f, 90f); //bloquea camara en esos rangos;
         transform.localRotation = Quaternion.Euler(xRotation, 0, 0); //hace las rotaciones xD
         playerBody.Rotate(Vector3.up * mouseX);
 
