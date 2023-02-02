@@ -58,6 +58,13 @@ public class Espada : MonoBehaviour
 
             collision.gameObject.GetComponent<DestroyAsset>().QuitarVidas(dañoPorGolpe);
         }
+
+        if (collision.gameObject.CompareTag("Enemy"))
+        {
+
+            GameManager.instance.puntos++;
+            collision.gameObject.GetComponent<DestroyAsset>().QuitarVidas(dañoPorGolpe);
+        }
     }
 
    

@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.Burst.CompilerServices;
 using UnityEngine;
 using UnityEngine.UIElements;
 
@@ -23,6 +24,8 @@ public class Player : MonoBehaviour
     public float fuerzaGranada = 550f;
     public Transform granadaSpawn;
     public int fuerzabombeo = 120;
+
+    
 
     
 
@@ -53,10 +56,10 @@ public class Player : MonoBehaviour
 
         isGrounded = Physics.CheckSphere(groundCheck.position, sphereRadius, groundLayer);
 
-        if (isGrounded && velocity.y < 0)
-        {
-            velocity.y = -2;
-        }
+        //if (isGrounded && velocity.y < 0)
+        //{
+        //    velocity.y = -2;
+        //}
 
 
         if (Input.GetKeyDown(KeyCode.Space) && isGrounded)
@@ -93,6 +96,7 @@ public class Player : MonoBehaviour
         }
     }
 
-   
+    
+
 
 }

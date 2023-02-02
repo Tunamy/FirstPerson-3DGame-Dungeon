@@ -56,7 +56,13 @@ public class Granada : MonoBehaviour
                 rangeObject.GetComponent<DestroyAsset>().QuitarVidas(dañoGranada);
             }
 
-            
+            if (rangeObject.GetComponent<Player>() != null)
+            {
+                GameManager.instance.PerderVida(10);
+            }
+
+
+
         }
 
         //audioSource.PlayOneShot(explosion);

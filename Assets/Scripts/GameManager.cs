@@ -11,6 +11,8 @@ using UnityEngine.UI;
 public class GameManager : MonoBehaviour
 {
     public static GameManager instance { get; private set; }
+    public int puntosNivelCompletado;
+    public int puntos;
 
     public float vida;
     public float vidaMax = 100;
@@ -30,6 +32,10 @@ public class GameManager : MonoBehaviour
     public GameObject espadainfo;
 
     public TextMeshProUGUI textAmmo;
+    public TextMeshProUGUI infoText;
+
+    public GameObject dmgScreen;
+    public CapsuleCollider colliderPlayer;
 
     private void Awake()
     {
@@ -53,6 +59,9 @@ public class GameManager : MonoBehaviour
             PauseGame();
 
         }
+
+        if(vida > 100)
+            vida= 100;
 
         if(gunAmmo > 30)
             gunAmmo = 30;
@@ -130,16 +139,30 @@ public class GameManager : MonoBehaviour
     public void PerderVida(int daño)
     {
 
+        
+
         vida -= daño;
         Barradevida.fillAmount = vida / vidaMax;
 
-        Debug.Log(vida / vidaMax);
+        StartCoroutine("Invulnerable");
+        
 
         if(vida <= 0)
         {
             //reiniciar nivel
         }
 
+    }
+
+    private IEnumerator Invulnerable()
+    {
+        dmgScreen.SetActive(true);
+        colliderPlayer.enabled = false;
+
+        yield return new WaitForSeconds(0.7f);
+
+        dmgScreen.SetActive(false);
+        colliderPlayer.enabled = true;
     }
 
     private void PauseGame()
@@ -156,5 +179,10 @@ public class GameManager : MonoBehaviour
             panelPause.SetActive(false);
         }
 
+    }
+
+    public void Informacion(string texto)
+    {
+        infoText.text = texto;
     }
 }
