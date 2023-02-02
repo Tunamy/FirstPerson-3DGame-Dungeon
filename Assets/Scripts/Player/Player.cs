@@ -9,20 +9,20 @@ public class Player : MonoBehaviour
     public CharacterController characterController;
 
     public float speed = 5;
-    public float gravity = -9.8f;
-    public float jumpForce = 300;
+    public float gravity = -15f;
+    public float jumpForce = 2;
     
     private Vector3 velocity;
 
     public Transform groundCheck;
-    public float sphereRadius = 0.3f;
+    public float sphereRadius = 0.2f;
     public LayerMask groundLayer;
     public bool isGrounded;
 
     public GameObject granadaPrefab;
     public float fuerzaGranada = 550f;
     public Transform granadaSpawn;
-    public int fuerzabombeo = 50;
+    public int fuerzabombeo = 120;
 
     
 
@@ -61,7 +61,9 @@ public class Player : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.Space) && isGrounded)
         {
-            velocity.y = Mathf.Sqrt(jumpForce * -2 * gravity * Time.deltaTime);
+            velocity.y = Mathf.Sqrt(jumpForce * -gravity);
+            
+            
         }
 
         if (Input.GetKeyDown(KeyCode.E) && GameManager.instance.granadas > 0)

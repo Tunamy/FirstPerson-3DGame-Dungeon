@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 6598772494601568114}
   - component: {fileID: 7455469249085461576}
   - component: {fileID: 454206444603215693}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: BolaBaston
   m_TagString: Untagged
   m_Icon: {fileID: 0}

@@ -8,8 +8,8 @@ public class Shoot : MonoBehaviour
     public Transform spawmPoint;
     public GameObject bullet;
 
-    public float shotForce = 1500f;
-    public float shotRate = 0.5f; //tiempo entre disparo
+    public float shotForce = 700f;
+    public float shotRate = 0.3f; //tiempo entre disparo
     private float shotRateTime = 0;
 
     public Animator bastonAnim;
@@ -44,7 +44,7 @@ public class Shoot : MonoBehaviour
 
 
                     GameObject newBullet = Instantiate(bullet, spawmPoint.position, spawmPoint.rotation);
-                    newBullet.GetComponent<Rigidbody>().AddForce(direction * shotForce * Time.deltaTime);//añade una fuerza recta por la fuerza
+                    newBullet.GetComponent<Rigidbody>().AddForce(direction * shotForce);//añade una fuerza recta por la fuerza
 
                     shotRateTime = Time.time + shotRate;
                     Destroy(newBullet, 3);

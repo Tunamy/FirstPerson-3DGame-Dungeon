@@ -4,16 +4,16 @@ using UnityEngine;
 
 public class MovimientoCamara : MonoBehaviour
 {
-    public float ratonSensivilidad = 180f;
+    public float ratonSensivilidad = 120f;
     public Transform playerBody;
-    public float xRotation = 00;
+    public float xRotation;
 
 
     void Start()
     {
         Cursor.lockState = CursorLockMode.Locked; //bloquear cursor y que se vea mejor ?¿
         transform.localRotation = Quaternion.Euler(0, 0, 0);
-        
+        xRotation = 0;
     }
 
     // Update is called once per frame

@@ -5,10 +5,10 @@ using UnityEngine;
 public class Granada : MonoBehaviour
 {
     public int dañoGranada = 10;
-    public float delay = 3f;
+    public float delay = 1.5f;
     float countDoown;
-    public float radius = 5;
-    public float fuerzaExplosion = 70f;
+    public float radius = 4;
+    public float fuerzaExplosion = 300f;
     bool exploted = false;
 
     public GameObject particulas;

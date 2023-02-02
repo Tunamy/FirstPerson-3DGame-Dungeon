@@ -9,6 +9,7 @@ public class FunteMuniciion : MonoBehaviour
     public int RegenerarVida = 10;
     public int tiempoRegeneracion = 10;
     public GameObject particulas;
+    public GameObject luz;
 
     
     // Start is called before the first frame update
@@ -39,11 +40,13 @@ public class FunteMuniciion : MonoBehaviour
     private IEnumerator ResetFuente()
     {
         particulas.SetActive(false);
+        luz.SetActive(false);
         gameObject.GetComponent<BoxCollider>().enabled = false;
 
         yield return new WaitForSeconds(tiempoRegeneracion);
 
         particulas.SetActive(true);
+        luz.SetActive(true);
         gameObject.GetComponent<BoxCollider>().enabled = true;
     }
 
