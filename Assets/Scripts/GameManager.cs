@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using TMPro;
 using Unity.Burst.CompilerServices;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 
@@ -17,6 +18,8 @@ public class GameManager : MonoBehaviour
     public float vida;
     public float vidaMax = 100;
     public Image Barradevida;
+
+    public GameObject player;
 
     public int gunAmmo = 30;
     private int gunammoAnterio;
@@ -139,7 +142,7 @@ public class GameManager : MonoBehaviour
     public void PerderVida(int daño)
     {
 
-        
+        gameObject.tag = "Reload";
 
         vida -= daño;
         Barradevida.fillAmount = vida / vidaMax;
@@ -149,20 +152,29 @@ public class GameManager : MonoBehaviour
 
         if(vida <= 0)
         {
+            
+            //SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
             //reiniciar nivel
         }
 
+    }
+
+    public void SiguienteNivel()
+    {
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1); //siguiente nivel
     }
 
     private IEnumerator Invulnerable()
     {
         dmgScreen.SetActive(true);
         colliderPlayer.enabled = false;
+        player.tag = "Reload";
 
         yield return new WaitForSeconds(0.7f);
 
         dmgScreen.SetActive(false);
         colliderPlayer.enabled = true;
+        player.tag = "Player";
     }
 
     private void PauseGame()

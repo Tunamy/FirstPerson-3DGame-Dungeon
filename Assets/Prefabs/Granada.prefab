@@ -119,9 +119,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8bc0dddc3d690c14c9b2f94a781a63b0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  "da\xF1oGranada": 10
+  "da\xF1oGranada": 5
   delay: 1.5
-  radius: 4
+  radius: 3
   fuerzaExplosion: 300
   particulas: {fileID: 3302442364004722511, guid: 10434d6bf3af98b46a88ab696f543ee3, type: 3}
   animator: {fileID: 2786121141897392965}

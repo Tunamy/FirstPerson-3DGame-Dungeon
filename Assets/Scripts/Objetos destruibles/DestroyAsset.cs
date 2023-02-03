@@ -20,8 +20,14 @@ public class DestroyAsset : MonoBehaviour
 
     public void QuitarVidas(int dmg)
     {
-        vidas -= dmg;
+        Debug.Log(dmg);
+        
+            vidas -= dmg;
 
+        if( vidas <= 0 && gameObject.tag == "Enemy")
+        {
+            GameManager.instance.puntos++;
+        }
         if( vidas <= 0)
         {
             GameObject newParticulas = Instantiate(particulas, transform.position, transform.rotation);

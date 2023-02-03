@@ -9,6 +9,7 @@ TagManager:
   - DmgAsset
   - Puerta
   - Enemy
+  - Reload
   layers:
   - Default
   - TransparentFX
@@ -19,7 +20,7 @@ TagManager:
   - Weapon
   - Player
   - Enemy
-  - 
+  - Triggers
   - 
   - 
   - 

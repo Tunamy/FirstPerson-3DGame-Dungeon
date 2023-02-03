@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using TMPro;
+using Unity.Mathematics;
 using UnityEngine;
 
 public class Shoot : MonoBehaviour
@@ -15,6 +16,7 @@ public class Shoot : MonoBehaviour
     public Animator bastonAnim;
 
     public TextMeshProUGUI textAmmo;
+    
 
     private void Start()
     {
@@ -29,13 +31,14 @@ public class Shoot : MonoBehaviour
             if (Time.time > shotRateTime && GameManager.instance.gunAmmo > 0) 
             {
 
-                 //resta una bala
+                //resta una bala
 
-                
 
-                Ray ray = Camera.main.ScreenPointToRay(new Vector3(Screen.width / 2, Screen.height / 2));
+                int layerMask = ~(1 << LayerMask.NameToLayer("Triggers")); // no ve la layer triger el rayo
+
+                Ray ray = Camera.main.ScreenPointToRay(new Vector3(Screen.width / 2, Screen.height / 2)); //rayo desde el centro de la camara
                 RaycastHit hit;
-                if (Physics.Raycast(ray, out hit))
+                if (Physics.Raycast(ray, out hit, math.INFINITY, layerMask))
                 {
                     bastonAnim.SetTrigger("Shoot");
 
