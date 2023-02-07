@@ -9,12 +9,15 @@ public class IA : MonoBehaviour
     public Transform destinoActual;
     public Transform destino;
     public Transform destino2;
+    public GameObject alerta;
     // Start is called before the first frame update
     void Start()
     {
         agent = GetComponent<NavMeshAgent>();
         agent.destination = destinoActual.transform.position; // al comienzo va a un destino
-        
+        destinoActual = destino;
+        alerta.SetActive(false);
+
     }
 
     // Update is called once per frame
@@ -25,11 +28,16 @@ public class IA : MonoBehaviour
         if (distancia < 7)
         {
             destinoActual = destino;
+            alerta.SetActive(false);
+            agent.stoppingDistance = 0;
         }
         float distancia1 = Vector3.Distance(transform.position, destino2.transform.position);
         if (distancia1 < 7)
         {
+            alerta.SetActive(true);
             destinoActual = destino2;
+            agent.speed = 3.5f;
+            agent.stoppingDistance = 1.5f;
         }
 
         agent.destination = destinoActual.transform.position;

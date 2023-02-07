@@ -690,7 +690,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   particulas: {fileID: 2044537949725961444, guid: 9eebb344ce727834aae17db737a8cf27, type: 3}
-  vidas: 10
+  vidas: 0
   vidaMax: 10
   Barradevida: {fileID: 3536912997554976621}
 --- !u!1 &2748282422418694191

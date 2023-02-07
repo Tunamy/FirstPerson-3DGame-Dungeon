@@ -56,6 +56,11 @@ public class Granada : MonoBehaviour
                 rangeObject.GetComponent<DestroyAsset>().QuitarVidas(dañoGranada);
             }
 
+            if (rangeObject.GetComponent<EnemigoConVIda>() != null)
+            {
+                rangeObject.GetComponent<EnemigoConVIda>().QuitarVidas(dañoGranada);
+            }
+
             if (rangeObject.GetComponent<Player>() != null)
             {
                 GameManager.instance.PerderVida(10);

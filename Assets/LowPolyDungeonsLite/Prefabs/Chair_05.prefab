@@ -11,10 +11,13 @@ GameObject:
   - component: {fileID: 6062957040624609817}
   - component: {fileID: 9062665835179654005}
   - component: {fileID: 6053280207594641469}
-  - component: {fileID: 2805744449665777166}
+  - component: {fileID: 8352439439324202189}
+  - component: {fileID: 3839302666531693843}
+  - component: {fileID: 8679211973954604444}
+  - component: {fileID: 1490919468146190682}
   m_Layer: 0
   m_Name: Chair_05
-  m_TagString: Untagged
+  m_TagString: DmgAsset
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -84,8 +87,8 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!64 &2805744449665777166
-MeshCollider:
+--- !u!65 &8352439439324202189
+BoxCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -94,7 +97,49 @@ MeshCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
-  serializedVersion: 4
-  m_Convex: 0
-  m_CookingOptions: 30
-  m_Mesh: {fileID: 4300000, guid: d51ff80ee7d069542b138da061286520, type: 3}
+  serializedVersion: 2
+  m_Size: {x: 0.48336235, y: 0.4242013, z: 0.4414626}
+  m_Center: {x: -0.004958108, y: 0.21233264, z: -0.0047534555}
+--- !u!65 &3839302666531693843
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 907737577407192764}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.48336235, y: 0.87903553, z: 0.070584446}
+  m_Center: {x: -0.004958108, y: 0.43974975, z: -0.19019254}
+--- !u!54 &8679211973954604444
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 907737577407192764}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 1
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
+--- !u!114 &1490919468146190682
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 907737577407192764}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b8694f7c88ab5d044b46794cc6247c86, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  particulas: {fileID: 2044537949725961444, guid: 9194f28580f2e0e4ba1d8338d90c0daa, type: 3}
+  vidas: 20

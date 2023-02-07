@@ -1,18 +1,19 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.AI;
 
 public class Bala : MonoBehaviour
 {
     public GameObject particleShoot;
     public GameObject luz;
     public int dañoPorbala = 1;
-    
+
 
 
     private void Start()
     {
-        
+
     }
     private void OnCollisionEnter(Collision collision)
     {
@@ -24,22 +25,18 @@ public class Bala : MonoBehaviour
 
         if (collision.gameObject.CompareTag("DmgAsset"))
         {
-            Debug.Log("dsfd");
-            collision.gameObject.GetComponent<DestroyAsset>().QuitarVidas(dañoPorbala);
-            
-        }
-
-        if (collision.gameObject.CompareTag("Puerta")) 
-        {
 
             collision.gameObject.GetComponent<DestroyAsset>().QuitarVidas(dañoPorbala);
+
         }
+
 
         if (collision.gameObject.CompareTag("Enemy"))
         {
 
-            
-            collision.gameObject.GetComponent<DestroyAsset>().QuitarVidas(dañoPorbala);
+
+            collision.gameObject.GetComponent<EnemigoConVIda>().QuitarVidas(dañoPorbala);
         }
     }
+
 }

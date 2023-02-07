@@ -37,10 +37,7 @@ public class Espada : MonoBehaviour
     public void OnCollisionEnter(Collision collision) 
     
     {
-        if (collision.gameObject.CompareTag("Player"))
-        {
-            return;
-        }
+        
         Debug.Log("colisiona");
         GameObject newParticula = Instantiate(particulas, puntaEspada.position, Quaternion.identity);
         Destroy(newParticula, 2);
@@ -52,17 +49,12 @@ public class Espada : MonoBehaviour
 
         }
 
-        // poner romper puerta
-        if (collision.gameObject.CompareTag("Puerta"))
-        {
-
-            collision.gameObject.GetComponent<DestroyAsset>().QuitarVidas(dañoPorGolpe);
-        }
+      
 
         if (collision.gameObject.CompareTag("Enemy"))
         {
-
-            collision.gameObject.GetComponent<DestroyAsset>().QuitarVidas(dañoPorGolpe);
+            
+            collision.gameObject.GetComponent<EnemigoConVIda>().QuitarVidas(dañoPorGolpe);
         }
     }
 
