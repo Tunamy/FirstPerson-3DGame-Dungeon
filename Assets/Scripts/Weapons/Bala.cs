@@ -5,6 +5,7 @@ using UnityEngine;
 public class Bala : MonoBehaviour
 {
     public GameObject particleShoot;
+    public GameObject luz;
     public int dañoPorbala = 1;
     
 
@@ -15,8 +16,9 @@ public class Bala : MonoBehaviour
     }
     private void OnCollisionEnter(Collision collision)
     {
-        
+        GameObject newLuz = Instantiate(luz, gameObject.transform.position, Quaternion.identity);
         GameObject newParticula = Instantiate(particleShoot, gameObject.transform.position, Quaternion.identity);
+        Destroy(newLuz, 0.7f);
         Destroy(newParticula, 2);
         Destroy(gameObject);
 

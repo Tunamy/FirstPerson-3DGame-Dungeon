@@ -149,4 +149,5 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   particleShoot: {fileID: 6237553109302029157, guid: 028315ff90f3b77478f6282592e23c74, type: 3}
+  luz: {fileID: 7287671089119879068, guid: 9f5db0bced4b3ab4fa50f3d697b264e8, type: 3}
   "da\xF1oPorbala": 1
