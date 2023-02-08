@@ -40,7 +40,7 @@ public class Shoot : MonoBehaviour
 
                 Ray ray = Camera.main.ScreenPointToRay(new Vector3(Screen.width / 2, Screen.height / 2)); //rayo desde el centro de la camara
                 RaycastHit hit;
-                Debug.DrawRay(ray.origin, ray.direction * 100, Color.magenta,5f);
+                
 
                 if (Physics.Raycast(ray, out hit, math.INFINITY, layerMask))
                 {
