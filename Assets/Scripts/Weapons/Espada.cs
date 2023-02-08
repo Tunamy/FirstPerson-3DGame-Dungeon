@@ -11,7 +11,7 @@ public class Espada : MonoBehaviour
     public int dañoPorGolpe = 3;
 
     public GameObject particulas;
-    public SphereCollider collaider;
+    public BoxCollider collaider;
     public Transform puntaEspada;
 
     // Start is called before the first frame update
@@ -51,7 +51,7 @@ public class Espada : MonoBehaviour
 
       
 
-        if (collision.gameObject.CompareTag("Enemy"))
+        if (collision.gameObject.CompareTag("Enemy") || collision.gameObject.CompareTag("Araña"))
         {
             
             collision.gameObject.GetComponent<EnemigoConVIda>().QuitarVidas(dañoPorGolpe);

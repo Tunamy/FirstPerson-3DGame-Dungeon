@@ -10,6 +10,7 @@ public class EnemigoConVIda : MonoBehaviour
     public float vidas;
     public float vidaMax = 10;
     public Image Barradevida;
+    public Animator animacionaraña;
 
     // Start is called before the first frame update
     void Start()
@@ -39,9 +40,19 @@ public class EnemigoConVIda : MonoBehaviour
             GameManager.instance.puntos++;
             GameObject newParticulas = Instantiate(particulas, transform.position + new Vector3(0,1,0), transform.rotation);
             Destroy(newParticulas, 2.1f);
-            Destroy(gameObject, 0.2f);
+            Destroy(gameObject);
         }
-       
+
+        if (vidas <= 0 && gameObject.tag == "Araña" && gameObject.GetComponent<Araña>())
+        {
+            GameManager.instance.puntos++;
+            animacionaraña.SetTrigger("Dead");
+            Invoke("InstanciarParticulas", 1.8f);
+            gameObject.GetComponent<Araña>().agent.speed = 0;
+            
+            Destroy(gameObject, 2);
+        }
+
     }
 
     private void OnTriggerEnter(Collider other)
@@ -50,5 +61,11 @@ public class EnemigoConVIda : MonoBehaviour
         {
             GameManager.instance.PerderVida(daño);
         }
+    }
+
+    public void InstanciarParticulas()
+    {
+        GameObject newParticulas = Instantiate(particulas, transform.position + new Vector3(0, 1, 0), transform.rotation);
+        Destroy(newParticulas, 2.1f);
     }
 }

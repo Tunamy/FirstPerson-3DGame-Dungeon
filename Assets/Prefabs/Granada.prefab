@@ -119,7 +119,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8bc0dddc3d690c14c9b2f94a781a63b0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  "da\xF1oGranada": 5
+  "da\xF1oGranada": 4
   delay: 1.5
   radius: 3
   fuerzaExplosion: 300

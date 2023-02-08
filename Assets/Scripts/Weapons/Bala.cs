@@ -31,11 +31,18 @@ public class Bala : MonoBehaviour
         }
 
 
-        if (collision.gameObject.CompareTag("Enemy"))
+        if (collision.gameObject.CompareTag("Enemy") || collision.gameObject.CompareTag("Araña"))
         {
 
 
             collision.gameObject.GetComponent<EnemigoConVIda>().QuitarVidas(dañoPorbala);
+        }
+
+        if(collision.gameObject.GetComponent<Araña>() != null)
+        {
+            collision.gameObject.GetComponent<Araña>().destinoActual = GameObject.Find("Player").transform;
+            collision.gameObject.GetComponent<Araña>().destino = GameObject.Find("Player").transform;
+            collision.gameObject.GetComponent<Araña>().enSpawn = false;
         }
     }
 

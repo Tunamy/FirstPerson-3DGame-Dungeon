@@ -46,7 +46,7 @@ public class Granada : MonoBehaviour
         {
             
             Rigidbody rb = rangeObject.GetComponent<Rigidbody>(); // si tienen rigid body le aplica la fuerza
-            if (rb != null)
+            if (rb != null && !rangeObject.GetComponent<TelaAraña>())
             {
                 rb.AddExplosionForce(fuerzaExplosion * 10, transform.position, radius);
                 
@@ -59,6 +59,13 @@ public class Granada : MonoBehaviour
             if (rangeObject.GetComponent<EnemigoConVIda>() != null)
             {
                 rangeObject.GetComponent<EnemigoConVIda>().QuitarVidas(dañoGranada);
+
+                if (rangeObject.GetComponent<Araña>())
+                {
+                    rangeObject.gameObject.GetComponent<Araña>().destinoActual = GameObject.Find("Player").transform;
+                    rangeObject.gameObject.GetComponent<Araña>().destino = GameObject.Find("Player").transform;
+                    rangeObject.gameObject.GetComponent<Araña>().enSpawn = false;
+                }
             }
 
             if (rangeObject.GetComponent<Player>() != null)

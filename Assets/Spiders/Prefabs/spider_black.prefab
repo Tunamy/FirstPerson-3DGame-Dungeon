@@ -1619,6 +1619,7 @@ GameObject:
   - component: {fileID: 5470847905714145899}
   - component: {fileID: 932239953}
   - component: {fileID: 932239954}
+  - component: {fileID: 2503409883590233133}
   - component: {fileID: 932239952}
   - component: {fileID: 932239950}
   - component: {fileID: 932239951}
@@ -1691,11 +1692,24 @@ BoxCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5128811620208064792}
   m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 2.4966848, y: 1.0253828, z: 2.2270813}
+  m_Center: {x: -0.01971537, y: 1.3251091, z: -0.19902855}
+--- !u!65 &2503409883590233133
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5128811620208064792}
+  m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 2.4966848, y: 1.7732978, z: 2.2270813}
-  m_Center: {x: -0.01971537, y: 0.9511477, z: -0.19902849}
+  m_Size: {x: 2.5627933, y: 1.1573943, z: 1.9306633}
+  m_Center: {x: 0, y: 1.3186471, z: -0.30637643}
 --- !u!195 &932239952
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -1735,6 +1749,7 @@ MonoBehaviour:
   vidas: 0
   vidaMax: 25
   Barradevida: {fileID: 5198666914918679940}
+  "animacionara\xF1a": {fileID: 0}
 --- !u!114 &932239951
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1747,9 +1762,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7d4b24760daa0b04a9742f6caa32281f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  agent: {fileID: 0}
   destinoActual: {fileID: 0}
   destino: {fileID: 0}
+  destino2: {fileID: 0}
+  enSpawn: 0
+  "ara\xF1aPeque\xF1a": {fileID: 0}
+  "spawnAra\xF1a": {fileID: 0}
   alerta: {fileID: 2839062854019826414}
+  "spawnTelaAra\xF1a": {fileID: 0}
+  velocidad: 0
+  "telaAra\xF1a": {fileID: 0}
 --- !u!1 &5245346726286412734
 GameObject:
   m_ObjectHideFlags: 0
