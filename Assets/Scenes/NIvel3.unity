@@ -21470,7 +21470,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1547268002, guid: 616fdaa7dbff40e4f91c695be15f9f4f, type: 3}
       propertyPath: municion
-      value: 5
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 1547268002, guid: 616fdaa7dbff40e4f91c695be15f9f4f, type: 3}
+      propertyPath: RegenerarVida
+      value: 30
       objectReference: {fileID: 0}
     - target: {fileID: 1547268002, guid: 616fdaa7dbff40e4f91c695be15f9f4f, type: 3}
       propertyPath: tiempoRegeneracion

@@ -20,4 +20,22 @@ public class Menus : MonoBehaviour
     {
         SceneManager.LoadScene(1);
     }
+
+    public void PulsarMenu()
+    {
+        SceneManager.LoadScene(0);
+        Time.timeScale = 1;
+    }
+
+    public void PulsarCreditos()
+    {
+        SceneManager.LoadScene(4);
+        Time.timeScale = 1;
+        Cursor.visible = true;
+    }
+
+    public void Salir()
+    {
+        Application.Quit();
+    }
 }

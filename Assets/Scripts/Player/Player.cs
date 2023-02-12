@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using Unity.Burst.CompilerServices;
+using Unity.Mathematics;
 using UnityEngine;
 using UnityEngine.UIElements;
 
@@ -78,11 +79,13 @@ public class Player : MonoBehaviour
 
     private void LanzarGranada()
     {
-        
+
+        int layerMask = ~(1 << LayerMask.NameToLayer("Triggers")); // no ve la layer triger el rayo
 
         Ray ray = Camera.main.ScreenPointToRay(new Vector3(Screen.width / 2, Screen.height / 2));
         RaycastHit hit;
-        if (Physics.Raycast(ray, out hit))
+
+        if (Physics.Raycast(ray, out hit,math.INFINITY, layerMask))
         {
             
             Vector3 direction = hit.point - granadaSpawn.position; //me da el vector de el spawn point hasta el centro de la camara

@@ -153,7 +153,7 @@ public class GameManager : MonoBehaviour
         if(vida <= 0)
         {
             
-            //SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
             //reiniciar nivel
         }
 
@@ -162,6 +162,7 @@ public class GameManager : MonoBehaviour
     public void SiguienteNivel()
     {
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1); //siguiente nivel
+      
     }
 
     private IEnumerator Invulnerable()
