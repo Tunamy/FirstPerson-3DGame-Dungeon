@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 865291215645261067}
   - component: {fileID: 997621220173583835}
   - component: {fileID: 2300267347159560051}
-  m_Layer: 10
+  m_Layer: 9
   m_Name: "TelaAra\xF1a"
   m_TagString: Untagged
   m_Icon: {fileID: 0}
