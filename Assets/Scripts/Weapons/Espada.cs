@@ -11,7 +11,7 @@ public class Espada : MonoBehaviour
     public int dañoPorGolpe = 3;
 
     public GameObject particulas;
-    public BoxCollider collaider;
+    public SphereCollider collaider;
     public Transform puntaEspada;
 
     // Start is called before the first frame update
