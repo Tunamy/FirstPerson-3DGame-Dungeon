@@ -30570,6 +30570,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player
       objectReference: {fileID: 0}
+    - target: {fileID: 6848071836490645314, guid: 2bd9e352e37631e4088401b7e572ced0, type: 3}
+      propertyPath: swayAmount
+      value: 3
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2bd9e352e37631e4088401b7e572ced0, type: 3}
 --- !u!1 &7583468933410867466 stripped

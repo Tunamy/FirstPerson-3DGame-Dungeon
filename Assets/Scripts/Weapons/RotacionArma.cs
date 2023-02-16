@@ -16,6 +16,11 @@ public class RotacionArma : MonoBehaviour
     
     void Update()
     {
+        
+    }
+
+    private void FixedUpdate()
+    {
         Sway();
     }
 

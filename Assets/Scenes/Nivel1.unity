@@ -1002,7 +1002,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5ee2d4ca676f274418024c4815c37ac1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  mensaje: Use your Sword "Number 1  key"  or Mouse Wheel
+  mensaje: Use your Sword "Number 2  key"  or Mouse Wheel
 --- !u!65 &120395811
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -13554,6 +13554,10 @@ PrefabInstance:
     - target: {fileID: 6848071836343794987, guid: 2bd9e352e37631e4088401b7e572ced0, type: 3}
       propertyPath: m_Name
       value: Player
+      objectReference: {fileID: 0}
+    - target: {fileID: 6848071836490645314, guid: 2bd9e352e37631e4088401b7e572ced0, type: 3}
+      propertyPath: swayAmount
+      value: 3
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2bd9e352e37631e4088401b7e572ced0, type: 3}
