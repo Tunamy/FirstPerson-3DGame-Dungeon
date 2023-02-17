@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.12731749, g: 0.13414757, b: 0.1210787, a: 1}
+  m_IndirectSpecularColor: {r: 0.12731704, g: 0.13414727, b: 0.121078536, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -18230,6 +18230,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Free Burrow (3)
       objectReference: {fileID: 0}
+    - target: {fileID: 1409326671983235891, guid: d3e2698074e008b408841bf9006d8dbe, type: 3}
+      propertyPath: m_TagString
+      value: Enemy
+      objectReference: {fileID: 0}
     - target: {fileID: 1598134210332692395, guid: d3e2698074e008b408841bf9006d8dbe, type: 3}
       propertyPath: m_LocalScale.x
       value: 1.0000161
@@ -27338,6 +27342,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Free Burrow (2)
       objectReference: {fileID: 0}
+    - target: {fileID: 1409326671983235891, guid: d3e2698074e008b408841bf9006d8dbe, type: 3}
+      propertyPath: m_TagString
+      value: Enemy
+      objectReference: {fileID: 0}
     - target: {fileID: 1598134210332692395, guid: d3e2698074e008b408841bf9006d8dbe, type: 3}
       propertyPath: m_LocalScale.x
       value: 1.0000161
@@ -29205,7 +29213,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 758405474759433415, guid: 7119622fd18f57a4abefa26942be161f, type: 3}
       propertyPath: mensaje
-      value: 'Defeat all  Enemies '
+      value: 'Defeat all Enemies '
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7119622fd18f57a4abefa26942be161f, type: 3}
